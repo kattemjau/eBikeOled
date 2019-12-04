@@ -216,16 +216,20 @@ void loop(void)
   int mintemp = 22;
   //temp from 50C-10C
   //44 pixels high
-  pos = map(pos, mintemp, maxtemp, 42,10);
+  pos = map(pos, mintemp, maxtemp, 52,10);
+  pos = constrain(pos, 10, 52);
   int bottom1= 44-(pos-10);
   u8g2.drawBox(5,pos, 8,bottom1);
   
-  pos2 = map(pos2,mintemp, maxtemp, 42,10);
+  pos2 = map(pos2,mintemp, maxtemp, 52,10);
+  pos2 = constrain(pos2, 10, 52);
   int bottom2= 44-(pos2-10);
   u8g2.drawBox(5+40,pos2, 8,bottom2);
   
-  pos3 = map(pos3, mintemp, maxtemp, 42,10);
+  pos3 = map(pos3, mintemp, maxtemp, 52,10);
+  pos3 = constrain(pos3, 10, 52);
   int bottom3= 44-(pos3-10);
+  //Serial.println(pos3);
   u8g2.drawBox(5+80,pos3, 8,bottom3);
   
 }
